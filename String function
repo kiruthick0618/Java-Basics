@@ -1,0 +1,189 @@
+//Java string method 
+public class Main
+{
+	public static void main(String[] args) {
+		String str = "Dragon Warrior";
+		System.out.println("Length: " + str.length());
+		System.out.println("Uppercase: " + str.toUpperCase());
+		System.out.println("Lowercase: " + str.toLowerCase());
+		System.out.println("Sub String: " + str.substring(0,6));
+		System.out.println("Character: " + str.charAt(7));
+		System.out.println("Concatenation: " + str.concat(" 🐉 "));
+		System.out.println("Index: " + str.indexOf("Dragon"));
+		System.out.println(str.equalsIgnoreCase("dragon warrior"));
+		System.out.println(str.compareTo("Dragon Veerane"));
+		System.out.println(str.replace('i','e'));
+		System.out.println(str.contains("Warrior"));
+		char[] chars = str.toCharArray();
+		for(char c: chars) {
+			System.out.print(c + " ");
+		}
+		String[] arr = str.split(" ");
+		for(String s : arr){
+		    System.out.println(s);
+		}
+	}
+}
+
+//Array Methods 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    List <Integer> li = new ArrayList<>();
+	    li.add(1);
+	    li.add(2);
+	    li.add(3);
+	    li.add(4);
+	    li.add(5);
+	 	li.removeIf(n -> n % 2 == 0);
+	    System.out.println("Original Array: \n"+ li);
+	    Collections.shuffle(li);
+	    System.out.println("Changed Array: \n"+ li);
+
+	}
+}
+
+//Array. 2
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    List <Integer> li = new ArrayList<>();
+	    li.add(1);
+	    li.add(2);
+	    li.add(3);
+	    li.add(4);
+	    li.add(5);
+	    li.removeIf(n -> n % 2 == 0);
+	    System.out.println("Array: \n"+ li);
+
+	}
+}
+
+//Sum
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[6];
+		System.out.print("Enter 6 numbers:");
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = sc.nextInt();
+		}
+		System.out.print("Enter target sum: ");
+		int target = sc.nextInt();
+		for (int i = 0; i < arr.length - 1; i++) {
+			if (arr[i] + arr[i + 1] == target) {
+				System.out.println(arr[i] + " + " + arr[i + 1] + " = " + target + " is true");
+			}
+		}
+		sc.close();
+	}
+} 
+
+//vowel
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = sc.nextLine().toLowerCase();
+
+        char[] arr = word.toCharArray();
+
+        System.out.println("Character Array: " + Arrays.toString(arr));
+
+        System.out.print("Vowels in the array: ");
+        for (char ch : arr) {
+            if (ch == 'a' || ch == 'e' || ch == 'i' ||
+                ch == 'o' || ch == 'u') {
+                System.out.print("["+ ch +"]" + " ");
+            }
+        }
+
+        sc.close();
+    }
+}
+
+//vowel 2
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Enter a word: ");
+		String word = sc.nextLine().toLowerCase();
+
+		System.out.print("Vowels in the word: ");
+
+		for (int i = 0; i < word.length(); i++) {
+			char ch = word.charArray(i);
+
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+				System.out.print(ch + " ");
+			}
+		}
+		sc.close();
+	}
+}
+
+//palindrome 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        int original = num;
+        int reverse = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            reverse = reverse * 10 + digit;
+            num = num / 10;
+        }
+
+        if (original == reverse) {
+            System.out.println(original + " is Palindrome");
+        } else {
+            System.out.println(original + " is Not a Palindrome");
+        }
+
+        sc.close();
+    }
+}
+
+//palindrome word
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String str = sc.nextLine();
+
+        String rev = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+
+        if (str.equals(rev)) {
+            System.out.println(str + " is Palindrome");
+        } else {
+            System.out.println(str + " is Not Palindrome");
+        }
+
+        sc.close();
+    }
+}
