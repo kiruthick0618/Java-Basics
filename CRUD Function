@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+
+public class EmployeeCRUD {
+
+    private static ArrayList<Employee> employees = new ArrayList<>();
+
+    // Create
+    public static void createEmployee(int id, String name) {
+        employees.add(new Employee(id, name));
+        System.out.println("Employee Added");
+    }
+
+    // Read
+    public static void readEmployees() {
+        for (Employee emp : employees) {
+            System.out.println(emp);
+        }
+    }
+
+    // Update
+    public static void updateEmployee(int id, String newName) {
+        for (Employee emp : employees) {
+            if (emp.id == id) {
+                emp.name = newName;
+                System.out.println("Employee Updated");
+                return;
+            }
+        }
+        System.out.println("Employee Not Found");
+    }
+
+    // Delete
+    public static void deleteEmployee(int id) {
+        employees.removeIf(emp -> emp.id == id);
+        System.out.println("Employee Deleted");
+    }
+
+    public static void main(String[] args) {
+
+        // Create
+        createEmployee(1, "John");
+        createEmployee(2, "Alice");
+
+        // Read
+        System.out.println("\nEmployees:");
+        readEmployees();
+
+        // Update
+        updateEmployee(1, "David");
+
+        System.out.println("\nAfter Update:");
+        readEmployees();
+
+        // Delete
+        deleteEmployee(2);
+
+        System.out.println("\nAfter Delete:");
+        readEmployees();
+    }
+}
+
+Employee Added
+Employee Added
+
+Employees:
+ID: 1, Name: John
+ID: 2, Name: Alice
+
+Employee Updated
+
+After Update:
+ID: 1, Name: David
+ID: 2, Name: Alice
+
+Employee Deleted
+
+After Delete:
+ID: 1, Name: David
