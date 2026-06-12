@@ -1,0 +1,19 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Map<Integer, String> a = new HashMap<>();
+
+        a.put(101, "John");
+        a.put(102, "Sam");
+        a.put(103, "David");
+
+        System.out.println(a);
+
+        a.remove(102);
+
+        System.out.println(a);
+    }
+}
